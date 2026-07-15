@@ -43,3 +43,10 @@ This signals senior level thinking while attempting system design interviews.
  - This turns design from opinion based to reasoning base.
  - Strong candidates constantly anchors decisions to requirement like latency over consistency, simplicity over flexibility, cost over scale.
  - Interviewers always prefer clarity over ambiguity for a specific design.
+
+ ### Topic: Think Aloud Strategy
+ - Speak your reasoning continuously
+ - Slience hides good thinking
+ - Narration beats fast answers
+ - Explain choices, not conclusions.
+ - Course correction openly
