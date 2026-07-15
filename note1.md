@@ -34,4 +34,12 @@ This signals senior level thinking while attempting system design interviews.
  - Peak load matters more than averages. Always mention "Peak to Average Ratios" for that specific system design and design always for "Peak Load".
  - Here main trade-off is "speed vs accuracy". While achieving more accuracy takes more time in correction will be result into rejection because it will waste interviewers time. 
  - Also don't move too fast with assumptions. If we are making assumptions, we should be announcing it during interview and make adjustment into those assumption in interview in future if required.
- 
+
+ ### Topic: Golden Rules of System Design Interviews
+ - There is no perfect system exists
+ - Current solutions are calculated trade-off driven solutions available into System
+ - Interviewer will like to see during system design interviews that why one component has been picked up with proper justication.
+ - while picking up any tools like DB (e.g PostGresSQL, MySQL), Caching (e.g. Redis, Hazelcast, Memcache) etc with their pros-cons.
+ - This turns design from opinion based to reasoning base.
+ - Strong candidates constantly anchors decisions to requirement like latency over consistency, simplicity over flexibility, cost over scale.
+ - Interviewers always prefer clarity over ambiguity for a specific design.
