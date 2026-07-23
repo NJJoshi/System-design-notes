@@ -124,6 +124,22 @@ Isolation controls how/whether concurrent transactions see each other's uncommit
 | **SERIALIZABLE** | ❌ Prevented | ❌ Prevented | ❌ Prevented |
 | **DEFAULT** | Uses whatever the underlying database's default isolation level is (e.g. `READ_COMMITTED` on Oracle/PostgreSQL, `REPEATABLE_READ` on MySQL InnoDB). |
 
+> **What if `isolation` is not specified at all?** `@Transactional` defaults to `Isolation.DEFAULT` — this isn't a fixed level of its own, it just means "delegate to whatever the underlying database's default isolation level is." Spring/JDBC doesn't impose a universal default; the DB driver does. So identical `@Transactional` code can behave differently depending on the database:
+>
+> | Database | Default Isolation Level |
+> |---|---|
+> | MySQL (InnoDB) | REPEATABLE_READ |
+> | PostgreSQL | READ_COMMITTED |
+> | Oracle | READ_COMMITTED |
+> | SQL Server | READ_COMMITTED |
+>
+> ```java
+> @Transactional  // isolation defaults to Isolation.DEFAULT → DB's own default
+> public void someMethod() {
+>     // ...
+> }
+> ```
+
 ### READ_UNCOMMITTED — example (dirty read)
 
 Bank balance row starts at `1000`.
