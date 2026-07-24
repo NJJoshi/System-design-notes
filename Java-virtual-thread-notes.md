@@ -76,3 +76,24 @@ Based on the slide currently displayed in the video, here is a concise summary o
 ### **Summary Takeaway**
 
 In Java 24 and later, thread pinning primarily applies to **native code (JNI) execution**, removing one of the major caveats previously associated with using `synchronized` blocks alongside Virtual Threads.
+
+### Virtual Thread
+- Great for I/O Tasks to achieve "non blocking benefits behind scene".
+- No need to use for CPU intensive Tasks.
+- Thread Per Task
+- Never Pool it
+
+### ExecutorService
+- Simple framework for high level concurrency
+- We submit task and get result via Future object
+- For Virtual Thread - we have Thread Per Task executor
+
+### ExecutorService with Platform Thread
+- Single/fixed/cached/scheduled/fork-join-pool
+- These implementation pools thread
+- With this implementation usage, don't use Virtual Thread Factory
+
+### ExecutorService with Virtual Thread
+- We can achieve single/fixed using Semaphore + Queue
+- Cached pool -> more or less same as thread-per-task
+- scheduled -> user platform thread to schedule and virtual thread to execute
