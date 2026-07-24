@@ -97,3 +97,9 @@ In Java 24 and later, thread pinning primarily applies to **native code (JNI) ex
 - We can achieve single/fixed using Semaphore + Queue
 - Cached pool -> more or less same as thread-per-task
 - scheduled -> user platform thread to schedule and virtual thread to execute
+
+### CompletableFuture
+- A powerful tool/class whichi implements ```Future<T>``` with many useful methods to process, combine results, handle errors in functionaly style.
+- It uses fork-join-pool for async tasks
+- we can use virtual thread per task executor for I/O tasks.
+- Limitation: It implements Future but "cancel" method does not interrupt the thread running task.
